@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : alarm_clock_top
+Version: W-2024.09-SP1
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /alarm_clock/ref/lib/stdcell_rvt/saed32rvt_tt0p85v25c.db)
+
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+alarm_clock_top        8000              saed32rvt_tt0p85v25c
+timegen                8000              saed32rvt_tt0p85v25c
+counter                8000              saed32rvt_tt0p85v25c
+alarm_reg              ForQA             saed32rvt_tt0p85v25c
+keyreg                 ForQA             saed32rvt_tt0p85v25c
+fsm                    ForQA             saed32rvt_tt0p85v25c
+
+
+Global Operating Voltage = 0.85 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+alarm_clock_top                           1.634   72.229 2.75e+07  101.391 100.0
+  fsm1 (fsm)                              0.498   10.453 4.21e+06   15.164  15.0
+  keyreg1 (keyreg)                        0.289   15.588 4.30e+06   20.181  19.9
+  alreg1 (alarm_reg)                      0.187   15.414 4.20e+06   19.804  19.5
+  count1 (counter)                        0.136   14.342 6.00e+06   20.477  20.2
+  tgen1 (timegen)                         0.418   16.314 6.04e+06   22.776  22.5
+1

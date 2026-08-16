@@ -1,0 +1,847 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : alarm_clock_top
+Version: W-2024.09-SP1
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ms_hr_reg[3]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U72/Y (AO22X1_RVT)                              0.1871     1.6871 f
+  tgen1/one_minute (timegen)                            0.0000     1.6871 f
+  count1/one_minute (counter)                           0.0000     1.6871 f
+  count1/U15/Y (NAND2X0_RVT)                            0.0809     1.7679 r
+  count1/U19/Y (NOR2X0_RVT)                             0.0976     1.8656 f
+  count1/U21/Y (NAND2X0_RVT)                            0.0763     1.9419 r
+  count1/U22/Y (INVX0_RVT)                              0.0481     1.9900 f
+  count1/U23/Y (NAND2X0_RVT)                            0.0655     2.0555 r
+  count1/U44/Y (AND2X1_RVT)                             0.0714     2.1270 r
+  count1/U45/Y (OA21X1_RVT)                             0.0727     2.1997 r
+  count1/U46/Y (AO221X1_RVT)                            0.0973     2.2970 r
+  count1/U47/Y (NAND3X0_RVT)                            0.0570     2.3540 f
+  count1/current_time_ms_hr_reg[3]/D (DFFARX1_RVT)      0.0122     2.3662 f
+  data arrival time                                                2.3662
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ms_hr_reg[3]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0626     4.7374
+  data required time                                               4.7374
+  --------------------------------------------------------------------------
+  data required time                                               4.7374
+  data arrival time                                               -2.3662
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.3712
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ms_hr_reg[2]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  timegen            8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U71/Y (INVX0_RVT)                               0.0803     1.5803 r
+  tgen1/U72/Y (AO22X1_RVT)                              0.1075     1.6878 r
+  tgen1/one_minute (timegen)                            0.0000     1.6878 r
+  count1/one_minute (counter)                           0.0000     1.6878 r
+  count1/U15/Y (NAND2X0_RVT)                            0.0667     1.7545 f
+  count1/U19/Y (NOR2X0_RVT)                             0.1071     1.8617 r
+  count1/U21/Y (NAND2X0_RVT)                            0.0671     1.9288 f
+  count1/U22/Y (INVX0_RVT)                              0.0628     1.9916 r
+  count1/U23/Y (NAND2X0_RVT)                            0.0518     2.0434 f
+  count1/U44/Y (AND2X1_RVT)                             0.0757     2.1191 f
+  count1/U45/Y (OA21X1_RVT)                             0.0734     2.1925 f
+  count1/U83/Y (INVX0_RVT)                              0.0426     2.2351 r
+  count1/U85/Y (AO21X1_RVT)                             0.0750     2.3101 r
+  count1/current_time_ms_hr_reg[2]/D (DFFARX1_RVT)      0.0123     2.3223 r
+  data arrival time                                                2.3223
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ms_hr_reg[2]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0570     4.7430
+  data required time                                               4.7430
+  --------------------------------------------------------------------------
+  data required time                                               4.7430
+  data arrival time                                               -2.3223
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4207
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_minute[1]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U125/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U126/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U130/Y (OAI21X1_RVT)                                  0.1255     0.8595 r
+  ms_minute[1] (out)                                    0.0012     0.8607 r
+  data arrival time                                                0.8607
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8607
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4393
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_hour[1] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U131/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U132/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U136/Y (OAI21X1_RVT)                                  0.1255     0.8595 r
+  ls_hour[1] (out)                                      0.0012     0.8607 r
+  data arrival time                                                0.8607
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8607
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4393
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_minute[1]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U113/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U114/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U118/Y (OAI21X1_RVT)                                  0.1255     0.8595 r
+  ls_minute[1] (out)                                    0.0012     0.8607 r
+  data arrival time                                                0.8607
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8607
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4393
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_hour[1] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U119/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U120/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U124/Y (OAI21X1_RVT)                                  0.1255     0.8595 r
+  ms_hour[1] (out)                                      0.0012     0.8607 r
+  data arrival time                                                0.8607
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8607
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4393
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ls_hr_reg[3]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U72/Y (AO22X1_RVT)                              0.1871     1.6871 f
+  tgen1/one_minute (timegen)                            0.0000     1.6871 f
+  count1/one_minute (counter)                           0.0000     1.6871 f
+  count1/U15/Y (NAND2X0_RVT)                            0.0809     1.7679 r
+  count1/U19/Y (NOR2X0_RVT)                             0.0976     1.8656 f
+  count1/U52/Y (AND3X1_RVT)                             0.0854     1.9510 f
+  count1/U56/Y (AO221X1_RVT)                            0.1297     2.0807 f
+  count1/U62/Y (OAI221X1_RVT)                           0.1402     2.2209 r
+  count1/U63/Y (NAND3X0_RVT)                            0.0538     2.2747 f
+  count1/current_time_ls_hr_reg[3]/D (DFFARX1_RVT)      0.0122     2.2869 f
+  data arrival time                                                2.2869
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ls_hr_reg[3]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0626     4.7374
+  data required time                                               4.7374
+  --------------------------------------------------------------------------
+  data required time                                               4.7374
+  data arrival time                                               -2.2869
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4505
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_minute[0]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U125/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U126/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U177/Y (OA221X1_RVT)                                  0.1127     0.8468 f
+  ms_minute[0] (out)                                    0.0012     0.8479 f
+  data arrival time                                                0.8479
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8479
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4521
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_hour[0] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U131/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U132/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U180/Y (OA221X1_RVT)                                  0.1127     0.8468 f
+  ls_hour[0] (out)                                      0.0012     0.8479 f
+  data arrival time                                                0.8479
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8479
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4521
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_minute[0]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U113/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U114/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U174/Y (OA221X1_RVT)                                  0.1127     0.8468 f
+  ls_minute[0] (out)                                    0.0012     0.8479 f
+  data arrival time                                                0.8479
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8479
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4521
+
+
+  Startpoint: fsm1/pre_state_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_hour[0] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[1]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[1]/Q (DFFARX1_RVT)                 0.1502     0.1502 f
+  fsm1/U9/Y (NAND2X0_RVT)                               0.0963     0.2465 r
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1228     0.3694 f
+  fsm1/show_new_time (fsm)                              0.0000     0.3694 f
+  U110/Y (NOR2X0_RVT)                                   0.1732     0.5426 r
+  U119/Y (AO222X1_RVT)                                  0.1399     0.6825 r
+  U120/Y (INVX0_RVT)                                    0.0515     0.7340 f
+  U183/Y (OA221X1_RVT)                                  0.1127     0.8468 f
+  ms_hour[0] (out)                                      0.0012     0.8479 f
+  data arrival time                                                0.8479
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8479
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4521
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ms_hr_reg[1]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U72/Y (AO22X1_RVT)                              0.1871     1.6871 f
+  tgen1/one_minute (timegen)                            0.0000     1.6871 f
+  count1/one_minute (counter)                           0.0000     1.6871 f
+  count1/U15/Y (NAND2X0_RVT)                            0.0809     1.7679 r
+  count1/U19/Y (NOR2X0_RVT)                             0.0976     1.8656 f
+  count1/U21/Y (NAND2X0_RVT)                            0.0763     1.9419 r
+  count1/U22/Y (INVX0_RVT)                              0.0481     1.9900 f
+  count1/U23/Y (NAND2X0_RVT)                            0.0655     2.0555 r
+  count1/U44/Y (AND2X1_RVT)                             0.0714     2.1270 r
+  count1/U80/Y (AO222X1_RVT)                            0.0907     2.2177 r
+  count1/U82/Y (NAND2X0_RVT)                            0.0426     2.2603 f
+  count1/current_time_ms_hr_reg[1]/D (DFFARX1_RVT)      0.0122     2.2725 f
+  data arrival time                                                2.2725
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ms_hr_reg[1]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0588     4.7412
+  data required time                                               4.7412
+  --------------------------------------------------------------------------
+  data required time                                               4.7412
+  data arrival time                                               -2.2725
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4687
+
+
+  Startpoint: fsm1/pre_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_hour[2] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[0]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[0]/Q (DFFARX1_RVT)                 0.1765     0.1765 r
+  fsm1/U10/Y (NAND3X0_RVT)                              0.0812     0.2577 f
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1404     0.3981 r
+  fsm1/show_new_time (fsm)                              0.0000     0.3981 r
+  U110/Y (NOR2X0_RVT)                                   0.1599     0.5580 f
+  U119/Y (AO222X1_RVT)                                  0.1346     0.6926 f
+  U120/Y (INVX0_RVT)                                    0.0549     0.7474 r
+  U184/Y (AND2X1_RVT)                                   0.0609     0.8083 r
+  ms_hour[2] (out)                                      0.0012     0.8095 r
+  data arrival time                                                0.8095
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8095
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4905
+
+
+  Startpoint: fsm1/pre_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_hour[2] (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[0]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[0]/Q (DFFARX1_RVT)                 0.1765     0.1765 r
+  fsm1/U10/Y (NAND3X0_RVT)                              0.0812     0.2577 f
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1404     0.3981 r
+  fsm1/show_new_time (fsm)                              0.0000     0.3981 r
+  U110/Y (NOR2X0_RVT)                                   0.1599     0.5580 f
+  U131/Y (AO222X1_RVT)                                  0.1346     0.6926 f
+  U132/Y (INVX0_RVT)                                    0.0549     0.7474 r
+  U181/Y (AND2X1_RVT)                                   0.0609     0.8083 r
+  ls_hour[2] (out)                                      0.0012     0.8095 r
+  data arrival time                                                0.8095
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8095
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4905
+
+
+  Startpoint: fsm1/pre_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ms_minute[2]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[0]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[0]/Q (DFFARX1_RVT)                 0.1765     0.1765 r
+  fsm1/U10/Y (NAND3X0_RVT)                              0.0812     0.2577 f
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1404     0.3981 r
+  fsm1/show_new_time (fsm)                              0.0000     0.3981 r
+  U110/Y (NOR2X0_RVT)                                   0.1599     0.5580 f
+  U125/Y (AO222X1_RVT)                                  0.1346     0.6926 f
+  U126/Y (INVX0_RVT)                                    0.0549     0.7474 r
+  U178/Y (AND2X1_RVT)                                   0.0609     0.8083 r
+  ms_minute[2] (out)                                    0.0012     0.8095 r
+  data arrival time                                                0.8095
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8095
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4905
+
+
+  Startpoint: fsm1/pre_state_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: ls_minute[2]
+            (output port clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  fsm                ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  fsm1/pre_state_reg[0]/CLK (DFFARX1_RVT)               0.0000     0.0000 r
+  fsm1/pre_state_reg[0]/Q (DFFARX1_RVT)                 0.1765     0.1765 r
+  fsm1/U10/Y (NAND3X0_RVT)                              0.0812     0.2577 f
+  fsm1/U11/Y (NAND2X2_RVT)                              0.1404     0.3981 r
+  fsm1/show_new_time (fsm)                              0.0000     0.3981 r
+  U110/Y (NOR2X0_RVT)                                   0.1599     0.5580 f
+  U113/Y (AO222X1_RVT)                                  0.1346     0.6926 f
+  U114/Y (INVX0_RVT)                                    0.0549     0.7474 r
+  U175/Y (AND2X1_RVT)                                   0.0609     0.8083 r
+  ls_minute[2] (out)                                    0.0012     0.8095 r
+  data arrival time                                                0.8095
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  output external delay                                -1.5000     3.3000
+  data required time                                               3.3000
+  --------------------------------------------------------------------------
+  data required time                                               3.3000
+  data arrival time                                               -0.8095
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.4905
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ms_min_reg[3]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  timegen            8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U71/Y (INVX0_RVT)                               0.0803     1.5803 r
+  tgen1/U72/Y (AO22X1_RVT)                              0.1075     1.6878 r
+  tgen1/one_minute (timegen)                            0.0000     1.6878 r
+  count1/one_minute (counter)                           0.0000     1.6878 r
+  count1/U65/Y (NAND2X0_RVT)                            0.0566     1.7444 f
+  count1/U66/Y (OR3X1_RVT)                              0.0918     1.8361 f
+  count1/U74/Y (OA221X1_RVT)                            0.1285     1.9647 f
+  count1/U78/Y (OAI21X1_RVT)                            0.1033     2.0680 r
+  count1/U79/Y (AO222X1_RVT)                            0.1146     2.1826 r
+  count1/current_time_ms_min_reg[3]/D (DFFASRX1_RVT)    0.0123     2.1949 r
+  data arrival time                                                2.1949
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ms_min_reg[3]/CLK (DFFASRX1_RVT)
+                                                        0.0000     4.8000 r
+  library setup time                                   -0.0686     4.7314
+  data required time                                               4.7314
+  --------------------------------------------------------------------------
+  data required time                                               4.7314
+  data arrival time                                               -2.1949
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.5366
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ls_hr_reg[2]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U72/Y (AO22X1_RVT)                              0.1871     1.6871 f
+  tgen1/one_minute (timegen)                            0.0000     1.6871 f
+  count1/one_minute (counter)                           0.0000     1.6871 f
+  count1/U15/Y (NAND2X0_RVT)                            0.0809     1.7679 r
+  count1/U19/Y (NOR2X0_RVT)                             0.0976     1.8656 f
+  count1/U52/Y (AND3X1_RVT)                             0.0854     1.9510 f
+  count1/U56/Y (AO221X1_RVT)                            0.1297     2.0807 f
+  count1/U59/Y (AO21X1_RVT)                             0.0881     2.1688 f
+  count1/current_time_ls_hr_reg[2]/D (DFFARX1_RVT)      0.0122     2.1810 f
+  data arrival time                                                2.1810
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ls_hr_reg[2]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0542     4.7458
+  data required time                                               4.7458
+  --------------------------------------------------------------------------
+  data required time                                               4.7458
+  data arrival time                                               -2.1810
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.5648
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ms_min_reg[2]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  timegen            8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U71/Y (INVX0_RVT)                               0.0803     1.5803 r
+  tgen1/U72/Y (AO22X1_RVT)                              0.1075     1.6878 r
+  tgen1/one_minute (timegen)                            0.0000     1.6878 r
+  count1/one_minute (counter)                           0.0000     1.6878 r
+  count1/U65/Y (NAND2X0_RVT)                            0.0566     1.7444 f
+  count1/U66/Y (OR3X1_RVT)                              0.0918     1.8361 f
+  count1/U74/Y (OA221X1_RVT)                            0.1285     1.9647 f
+  count1/U75/Y (INVX0_RVT)                              0.0461     2.0108 r
+  count1/U76/Y (OA222X1_RVT)                            0.0789     2.0897 r
+  count1/U77/Y (AO21X1_RVT)                             0.0565     2.1462 r
+  count1/current_time_ms_min_reg[2]/D (DFFARX1_RVT)     0.0123     2.1585 r
+  data arrival time                                                2.1585
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ms_min_reg[2]/CLK (DFFARX1_RVT)   0.0000     4.8000 r
+  library setup time                                   -0.0575     4.7425
+  data required time                                               4.7425
+  --------------------------------------------------------------------------
+  data required time                                               4.7425
+  data arrival time                                               -2.1585
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.5841
+
+
+  Startpoint: fastwatch (input port clocked by clock)
+  Endpoint: count1/current_time_ls_hr_reg[1]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alarm_clock_top    8000                  saed32rvt_tt0p85v25c
+  timegen            8000                  saed32rvt_tt0p85v25c
+  counter            8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5000     1.5000 f
+  fastwatch (in)                                        0.0000     1.5000 f
+  tgen1/fastwatch (timegen)                             0.0000     1.5000 f
+  tgen1/U71/Y (INVX0_RVT)                               0.0803     1.5803 r
+  tgen1/U72/Y (AO22X1_RVT)                              0.1075     1.6878 r
+  tgen1/one_minute (timegen)                            0.0000     1.6878 r
+  count1/one_minute (counter)                           0.0000     1.6878 r
+  count1/U15/Y (NAND2X0_RVT)                            0.0667     1.7545 f
+  count1/U19/Y (NOR2X0_RVT)                             0.1071     1.8617 r
+  count1/U50/Y (NAND4X0_RVT)                            0.0672     1.9288 f
+  count1/U53/Y (NAND2X0_RVT)                            0.0746     2.0034 r
+  count1/U54/Y (OA222X1_RVT)                            0.0846     2.0880 r
+  count1/U55/Y (AO21X1_RVT)                             0.0565     2.1445 r
+  count1/current_time_ls_hr_reg[1]/D (DFFARX1_RVT)      0.0123     2.1568 r
+  data arrival time                                                2.1568
+
+  clock clock (rise edge)                               5.0000     5.0000
+  clock network delay (ideal)                           0.0000     5.0000
+  clock uncertainty                                    -0.2000     4.8000
+  count1/current_time_ls_hr_reg[1]/CLK (DFFARX1_RVT)    0.0000     4.8000 r
+  library setup time                                   -0.0575     4.7425
+  data required time                                               4.7425
+  --------------------------------------------------------------------------
+  data required time                                               4.7425
+  data arrival time                                               -2.1568
+  --------------------------------------------------------------------------
+  slack (MET)                                                      2.5858
+
+
+1
